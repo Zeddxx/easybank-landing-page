@@ -429,6 +429,7 @@
     align-items: center;
     flex-direction: column-reverse;
     height: 100vh;
+    margin-bottom: 2rem;
   }
   .content-img-div {
     width: 100%;
