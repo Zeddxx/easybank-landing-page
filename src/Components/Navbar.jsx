@@ -1,9 +1,9 @@
-import React,{useState}  from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Logo from '../assets/images/logo.svg'
 import HamburgerBtn from './HamburgerBtn'
 
-const Navbar = () => {
+const Navbar = ({isActive, setIsActive}) => {
     
     const menuLists = [
         {
@@ -32,8 +32,6 @@ const Navbar = () => {
             "id" : "careers"
         }
     ]
-
-    const [isActive, setIsActive] = useState(false);
 
     return (
     <nav className='navbar'>

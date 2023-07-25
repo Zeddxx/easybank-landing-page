@@ -8,6 +8,8 @@
   position: sticky;
   top: 0;
   z-index: 4;
+
+  box-shadow: 0 3px 4px #33333321;
 }
 .main-nav {
   display: flex;
@@ -359,8 +361,8 @@
 
 /* Hamburger Btn starts */
 .hamburger {
-  height: 1rem;
-  width: 2.5rem;
+  height: 1.2rem;
+  width: 2rem;
   /* background: green; */
   display: none;
   flex-direction: column;
@@ -378,12 +380,22 @@
   opacity: 0;
 }
 .hamburger.active .bar:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-  /* width: 90%; */
+  transform: translateY(8px) rotate(45deg);
+  /* width: 75%; */
 }
 .hamburger.active .bar:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
-  /* width: 90%; */
+  transform: translateY(-8px) rotate(-45deg);
+  /* width: 75%; */
+}
+.shadow{
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom, #333333 -20%,  #ffffff00 200%);
+  height: 100vh;
+  width: 100%;
+  z-index: 3;
 }
 /* Hamburger Btn ends */
 
@@ -391,6 +403,10 @@
 @media (width <= 1020px) {
   .navbar {
     padding: 0 2rem;
+    z-index: 9;
+  }
+  .shadow.visible{
+    display: flex;
   }
   .main-nav {
     position: relative;
@@ -402,22 +418,26 @@
     width: 100%;
     top: 5.5rem;
     left: -140%;
+
     background: var(--white);
     align-items: center;
     height: 18.125rem;
-    border-radius: 0.8rem;
+    border-radius: 0.3rem;
     padding: 1.44rem;
     gap: 1rem;
     transition: all .2s ease;
+    z-index: 3;
   }
   .lists.shows{
     left: 0;
   }
+
   .lists > a {
     font-size: 1.2rem;
     font-style: normal;
     font-weight: 500;
     line-height: 1.1375rem;
+    z-index: 4;
   }
   .main-nav > .request-btn {
     display: none;
@@ -486,10 +506,15 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    gap: 1.5rem;
   }
   .box {
     align-items: center;
     width: 100%;
+    padding: 0;
+  }
+  .box > p{
+    text-align: center;
   }
   .article-section {
     height: inherit;
@@ -500,11 +525,15 @@
     padding: 0 2rem;
     gap: 1.52rem;
   }
+  .inner-article > h3{
+    font-size: 1.88rem;
+  }
   .cards {
     height: inherit;
     flex-direction: column;
     width: 100%;
     gap: 1.88rem;
+    margin-bottom: 2rem;
   }
   .card-main {
     width: 100%;
