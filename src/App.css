@@ -116,7 +116,8 @@
   background: url("../src/assets/images/bg-intro-desktop.svg") no-repeat;
   background-size: 130%;
   background-position: 10% 75%;
-  overflow: hidden;
+  /* overflow-x: hidden; */
+  z-index: 2;
 }
 
 .content-img-div > img {
@@ -400,6 +401,13 @@
 /* Hamburger Btn ends */
 
 /* Media Queries Starts */
+
+@media (width <= 1500px){
+  .content-img-div{
+    overflow: hidden;
+  }
+}
+
 @media (width <= 1020px) {
   .navbar {
     padding: 0 2rem;
@@ -460,6 +468,7 @@
     background-position: center;
     background-size: 100%;
     position: relative;
+    overflow: hidden;
   }
   .content-img-div > img {
     height: 120%;
